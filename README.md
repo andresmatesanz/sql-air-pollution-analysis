@@ -118,25 +118,21 @@ source sql/08_advanced_analysis.sql;
 
 ## 📊 Qué encontrarás en el proyecto
 
-- **t_master:** tabla principal con todos los datos combinados
-
-- **valor_dia:** promedio diario de emisiones por estación y contaminante
-
-- **FECHA:** fecha estándarizada para análisis temporal
-
-- Rankings de estaciones por emisiones anuales y medias mensuales
-
-- Análisis estadístico avanzado: mediana, percentil 75 y filtrado por contaminantes más significativos
+- **t_master**: tabla principal con todos los datos combinados  
+- **valor_dia**: promedio diario de emisiones por estación y contaminante  
+- **FECHA**: fecha estándarizada para análisis temporal  
+- Rankings de estaciones por emisiones anuales y medias mensuales  
+- Análisis estadístico avanzado: mediana, percentil 75 y filtrado por los contaminantes más significativos
 
 ---
 
 ## 📝 Notas
 
-- Todos los scripts SQL están organizados para ejecutarse de manera secuencial.
+- Todos los scripts SQL están organizados para ejecutarse de manera secuencial.  
+- Los comentarios dentro de los archivos explican la funcionalidad de cada bloque de código.  
+- Asegúrate de que los datasets estén en la carpeta `data/` antes de ejecutar los scripts.  
+- Se recomienda ejecutar los scripts en el orden indicado para evitar errores de dependencias entre tablas y columnas.
 
-- Los comentarios dentro de los archivos explican la funcionalidad de cada bloque de código.
-
-- Asegúrate de que los datasets estén en la carpeta `data/` antes de ejecutar los scripts.
 
 ---
 
@@ -149,8 +145,8 @@ source sql/08_advanced_analysis.sql;
 
 ## 💡 Sugerencias de mejora
 
-- Integrar dashboards con Power BI o Tableau para visualizaciones interactivas
-
-- Automatizar la importación de los datasets usando Python y `pandas`
-
-- Añadir alertas automáticas para valores críticos de contaminación
+- Integrar dashboards con Power BI o Tableau para visualizaciones interactivas.  
+- Automatizar la importación de los datasets usando Python y `pandas`.  
+- Añadir alertas automáticas para valores críticos de contaminación.  
+- Implementar análisis predictivo de emisiones utilizando técnicas de Machine Learning.  
+- Crear funciones almacenadas o vistas en SQL para consultas recurrentes y facilitar el mantenimiento.
