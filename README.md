@@ -11,86 +11,77 @@ El objetivo principal es **poner en práctica consultas SQL avanzadas**, incluye
 
 ## 📁 Estructura del repositorio
 
-📦 sql-air-pollution-analysis
-├── 📄 README.md
-├── 📄 air_pollution_analysis.sql
-└── 📂 data
-    ├── emisiones_2020.csv
-    ├── emisiones_2021.csv
-    ├── emisiones_2022.csv
-    └── emisiones_2023.csv
+```text
+analizador-contaminacion/
+├── data/
+│   ├── emisiones2020.csv
+│   ├── emisiones2021.csv
+│   ├── emisiones2022.csv
+│   └── emisiones2023.csv
+├── sql/
+│   ├── 01_create_database.sql
+│   ├── 02_merge_datasets.sql
+│   ├── 03_clean_columns.sql
+│   ├── 04_add_columns.sql
+│   ├── 05_station_queries.sql
+│   ├── 06_summary_queries.sql
+│   ├── 07_monthly_aggregates.sql
+│   └── 08_advanced_analysis.sql
+└── README.md
 
 
-(La carpeta data contiene los datasets originales utilizados para el análisis.)
-
-
----
-
-## 🗃️ Fuente de datos
-
-Los datos corresponden a mediciones de contaminación atmosférica en Madrid y contienen información sobre:
-
-- Año y mes de la medición  
-- Estación de medición  
-- Tipo de contaminante (magnitud)  
-- Valores diarios de concentración (D01–D31)  
-
-Cada dataset representa un año distinto.
+- **data/:** contiene los datasets originales de emisiones.
+- **sql/:** contiene los scripts SQL organizados en archivos independientes por función.
+- **README.md:** documentación del proyecto y guía de uso.
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## ⚙️ Requisitos
 
-- **SQL (MySQL 8+)**
-- Funciones de ventana (`OVER`, `RANK`, `LAG`, `LEAD`, `ROW_NUMBER`)
-- CTEs (`WITH`)
-- Agregaciones y estadísticas descriptivas
-
----
-
-## 🔍 Análisis realizados
-
-Entre los análisis incluidos en el proyecto se encuentran:
-
-- Unión de datasets de múltiples años en una tabla maestra
-- Cálculo de valores medios diarios de contaminación
-- Creación de columnas temporales (fecha)
-- Comparación de niveles de contaminación entre estaciones
-- Estadísticas descriptivas por contaminante y estación
-- Medias mensuales y trimestrales
-- Rankings de estaciones por nivel de contaminación
-- Análisis acumulado anual y total
-- Cálculo de mediana y percentiles
-- Identificación de picos de contaminación
+- MySQL o MariaDB (versión 8.0 o superior recomendada)
+- Acceso a terminal o cliente SQL (por ejemplo, MySQL Workbench, VS Code con extensión SQL)
+- Conocimientos básicos de SQL
 
 ---
 
-## 🧩 Aspectos técnicos destacados
+## 🚀 Instrucciones para ejecutar el proyecto
 
-- Uso intensivo de **funciones de ventana** para análisis temporal
-- Construcción de queries complejas mediante **CTEs**
-- Cálculo manual de **mediana y percentil 75** en SQL
-- Análisis estadístico filtrado por año y umbrales críticos
-- Enfoque en consultas legibles y escalables
+1. Preparar la base de datos
 
----
+Ejecutar el script 01_create_database.sql para crear la base de datos emisiones:
 
-## 🚀 Cómo ejecutar el proyecto
+```sql
+source sql/01_create_database.sql;
 
-1. Crear una base de datos en MySQL:
-   ```sql
-   CREATE DATABASE emisiones;
+2. Cargar los datasets
 
-2. Importar los datasets anuales en tablas independientes.
+Importar los archivos CSV (`emisiones2020.csv`, `emisiones2021.csv`, etc.) a tablas dentro de la base de datos `emisiones`. Puedes usar MySQL Workbench, VS Code o el comando `LOAD DATA INFILE`.
 
-3. Ejecutar el archivo:
+3. Mergear los datasets
 
-`air_pollution_analysis.sql`
+Ejecutar `02_merge_datasets.sql` para combinar todas las tablas anuales en `t_master`:
 
-Este script crea la tabla maestra y ejecuta todas las consultas del análisis.
+```sql
+source sql/02_merge_datasets.sql;
 
----
+4. Limpiar columnas innecesarias
 
-## 📌 Conclusiones principales
+Ejecutar 03_clean_columns.sql:
 
-El análisis permite identificar diferencias significativas entre estaciones, contaminantes con mayor impacto y tendencias temporales relevantes en los niveles de contaminación en Madrid entre 2020 y 2023.
+```sql
+source sql/03_clean_columns.sql;
+
+5. Agregar columnas calculadas
+
+Ejecutar 04_add_columns.sql para calcular valor_dia y FECHA:
+
+```sql
+source sql/04_add_columns.sql;
+
+6. Consultas de estaciones y comparación de valores
+
+Ejecutar 05_station_queries.sql para obtener información de estaciones y comparar valores diarios:
+
+```sql
+source sql/05_station_queries.sql;
+
