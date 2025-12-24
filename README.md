@@ -114,3 +114,44 @@ Ejecutar `08_advanced_analysis.sql` para obtener rankings anuales, mes con mayor
 source sql/08_advanced_analysis.sql;
 ```
 
+---
+
+## 📊 Qué encontrarás en el proyecto
+
+- **t_master:** tabla principal con todos los datos combinados
+
+- **valor_dia:** promedio diario de emisiones por estación y contaminante
+
+- **FECHA:** fecha estándarizada para análisis temporal
+
+- Rankings de estaciones por emisiones anuales y medias mensuales
+
+- Análisis estadístico avanzado: mediana, percentil 75 y filtrado por contaminantes más significativos
+
+---
+
+## 📝 Notas
+
+- Todos los scripts SQL están organizados para ejecutarse de manera secuencial.
+
+- Los comentarios dentro de los archivos explican la funcionalidad de cada bloque de código.
+
+- Asegúrate de que los datasets estén en la carpeta `data/` antes de ejecutar los scripts.
+
+---
+
+## 📌 Referencias
+
+- Formato de datasets de calidad del aire: Ministerio de Transición Ecológica
+
+- Documentación MySQL: MySQL 8.0 Reference Manual
+
+---
+
+## 💡 Sugerencias de mejora
+
+- Integrar dashboards con Power BI o Tableau para visualizaciones interactivas
+
+- Automatizar la importación de los datasets usando Python y `pandas`
+
+- Añadir alertas automáticas para valores críticos de contaminación
