@@ -1,6 +1,6 @@
 -- Eliminar columnas que no se utilizan
 ALTER TABLE t_master
-DROP COLUMN IF EXISTS MyUnknownColumn;
+DROP COLUMN MyUnknownColumn;
 
 ALTER TABLE t_master
-DROP COLUMN IF EXISTS PUNTO_MUESTREO;
+DROP COLUMN PUNTO_MUESTREO;
