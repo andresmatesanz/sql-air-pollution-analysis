@@ -85,7 +85,7 @@ Entre los análisis incluidos en el proyecto se encuentran:
 
 3. Ejecutar el archivo:
 
-air_pollution_analysis.sql
+`air_pollution_analysis.sql`
 
 Este script crea la tabla maestra y ejecuta todas las consultas del análisis.
 
