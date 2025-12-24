@@ -142,9 +142,8 @@ source sql/08_advanced_analysis.sql;
 
 ## 📌 Referencias
 
-- Formato de datasets de calidad del aire: Ministerio de Transición Ecológica
-
-- Documentación MySQL: MySQL 8.0 Reference Manual
+- [Ministerio de Transición Ecológica: Calidad del aire](https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/contaminacion-aire/calidad-aire.aspx)  
+- [MySQL 8.0 Reference Manual](https://dev.mysql.com/doc/)
 
 ---
 
