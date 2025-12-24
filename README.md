@@ -1,15 +1,9 @@
-# 📊 Análisis de Contaminación del Aire en Madrid (2020–2023)
+# Análisis de Calidad del Aire en Madrid
 
-## 🧠 Descripción del proyecto
+Este proyecto analiza la calidad del aire en distintas estaciones de Madrid durante varios años, utilizando datos de distintas magnitudes (como partículas, NO2, etc.) y comparando resultados entre estaciones y años. Los resultados se presentan en CSV y están acompañados de documentación detallada.
 
-Este proyecto consiste en un análisis de datos de **contaminación atmosférica en la ciudad de Madrid** utilizando **SQL**.  
-Se combinan datos de varios años (2020–2023) para estudiar la evolución de distintos contaminantes, comparar estaciones de medición y realizar análisis estadísticos descriptivos y avanzados.
+## Estructura del proyecto
 
-El objetivo principal es **poner en práctica consultas SQL avanzadas**, incluyendo funciones de ventana, agregaciones, rankings y análisis temporal.
-
----
-
-## 📁 Estructura del repositorio
 
 ```text
 analizador-contaminacion/
@@ -18,6 +12,13 @@ analizador-contaminacion/
 │   ├── emisiones2021.csv
 │   ├── emisiones2022.csv
 │   └── emisiones2023.csv
+├── docs/
+│   ├── project_description.md
+├── outputs/
+│   ├── comparativa_estaciones_2020.csv
+│   ├── media_mensual_por_estacion.csv
+│   ├── ranking_emisiones_2020_2021.csv
+│   └── estadisticas_avanzadas_2022.csv
 ├── sql/
 │   ├── 01_create_database.sql
 │   ├── 02_merge_datasets.sql
@@ -30,123 +31,40 @@ analizador-contaminacion/
 └── README.md
 ```
 
-- **data/:** contiene los datasets originales de emisiones.
-- **sql/:** contiene los scripts SQL organizados en archivos independientes por función.
-- **README.md:** documentación del proyecto y guía de uso.
 
----
+### Detalle de las carpetas y archivos
 
-## ⚙️ Requisitos
+- **data/**  
+  Contiene los archivos CSV originales generados a partir de las queries SQL. Son los datos en crudo que se utilizaron para los análisis.
 
-- MySQL o MariaDB (versión 8.0 o superior recomendada)
-- Acceso a terminal o cliente SQL (por ejemplo, MySQL Workbench, VS Code con extensión SQL)
-- Conocimientos básicos de SQL
+- **sql/**  
+  Contiene las queries SQL utilizadas para extraer, filtrar y procesar los datos de las estaciones. Cada script corresponde a una operación específica, como cálculo de promedios mensuales, comparativas entre estaciones o estadísticas avanzadas.
 
----
+- **outputs/**  
+  Contiene los resultados finales en formato CSV, incluyendo:
+  - `comparativa_estaciones_2020.csv`: diferencia de valores entre dos estaciones (Ramón y Cajal vs Escuelas Aguirre) para 2020.
+  - `estadisticas_avanzadas_2022.csv`: estadísticas detalladas por magnitud (promedio diario, mediana, percentil 75) para 2022.
+  - `media_mensual_por_estacion.csv`: promedio mensual de cada estación desde 2020 hasta 2023.
 
-## 🚀 Instrucciones para ejecutar el proyecto
+- **docs/project_description.md**  
+  Documento que explica el proyecto, describe los datos, los resultados obtenidos y los análisis realizados. Contiene interpretaciones directas de los CSV de salida.
 
-1. Preparar la base de datos
+## Cómo usar el proyecto
 
-Ejecutar el script `01_create_database.sql` para crear la base de datos `emisiones`:
+1. Clonar el repositorio:
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd <NOMBRE_DEL_REPOSITORIO>
 
-```sql
-source sql/01_create_database.sql;
-```
+2. Explorar los CSV en `data/` y `outputs/` para revisar los datos y resultados.
 
-2. Cargar los datasets
+3. Revisar los scripts SQL en `sql/` para entender cómo se generaron los datos y estadísticas.
 
-Importar los archivos CSV (`emisiones2020.csv`, `emisiones2021.csv`, etc.) a tablas dentro de la base de datos `emisiones`. Puedes usar MySQL Workbench, VS Code o el comando `LOAD DATA INFILE`.
+4. Consultar `docs/project_description.md` para un análisis completo y explicaciones de los outputs.
 
-3. Mergear los datasets
+## Contribuciones
 
-Ejecutar `02_merge_datasets.sql` para combinar todas las tablas anuales en `t_master`:
+Este proyecto es un análisis finalizado y reproducible. Para nuevas contribuciones se recomienda mantener la estructura de carpetas y documentar cualquier script adicional en `docs/project_description.md`.
 
-```sql
-source sql/02_merge_datasets.sql;
-```
-
-4. Limpiar columnas innecesarias
-
-Ejecutar `03_clean_columns.sql`:
-
-```sql
-source sql/03_clean_columns.sql;
-```
-
-5. Agregar columnas calculadas
-
-Ejecutar `04_add_columns.sql` para calcular `valor_dia` y `FECHA`:
-
-```sql
-source sql/04_add_columns.sql;
-```
-
-6. Consultas de estaciones y comparación de valores
-
-Ejecutar `05_station_queries.sql` para obtener información de estaciones y comparar valores diarios:
-
-```sql
-source sql/05_station_queries.sql;
-```
-
-7. Resúmenes estadísticos y acumulados
-
-Ejecutar `06_summary_queries.sql` para generar resúmenes por contaminante y por estación:
-
-```sql
-source sql/06_summary_queries.sql;
-```
-
-8. Cálculo de medias mensuales y análisis por nombres largos
-
-Ejecutar `07_monthly_aggregates.sql`:
-
-```sql
-source sql/07_monthly_aggregates.sql;
-```
-
-9. Ranking anual y análisis avanzado
-
-Ejecutar `08_advanced_analysis.sql` para obtener rankings anuales, mes con mayor media y análisis avanzado (mediana y percentil 75):
-
-```sql
-source sql/08_advanced_analysis.sql;
-```
-
----
-
-## 📊 Qué encontrarás en el proyecto
-
-- **t_master**: tabla principal con todos los datos combinados  
-- **valor_dia**: promedio diario de emisiones por estación y contaminante  
-- **FECHA**: fecha estándarizada para análisis temporal  
-- Rankings de estaciones por emisiones anuales y medias mensuales  
-- Análisis estadístico avanzado: mediana, percentil 75 y filtrado por los contaminantes más significativos
-
----
-
-## 📝 Notas
-
-- Todos los scripts SQL están organizados para ejecutarse de manera secuencial.  
-- Los comentarios dentro de los archivos explican la funcionalidad de cada bloque de código.  
-- Asegúrate de que los datasets estén en la carpeta `data/` antes de ejecutar los scripts.  
-- Se recomienda ejecutar los scripts en el orden indicado para evitar errores de dependencias entre tablas y columnas.
-
-
----
-
-## 📌 Referencias
-
-- [Ministerio de Transición Ecológica: Calidad del aire](https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/contaminacion-aire/calidad-aire.aspx)  
-- [MySQL 8.0 Reference Manual](https://dev.mysql.com/doc/)
-
----
-
-## 💡 Sugerencias de mejora
-
-- Integrar dashboards con Power BI o Tableau para visualizaciones interactivas.  
-- Automatizar la importación de los datasets usando Python y `pandas`.  
-- Añadir alertas automáticas para valores críticos de contaminación.  
-- Implementar análisis predictivo de emisiones utilizando técnicas de Machine Learning.  
-- Crear funciones almacenadas o vistas en SQL para consultas recurrentes y facilitar el mantenimiento.
+## Autor
+Andrés Matesanz
