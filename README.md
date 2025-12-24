@@ -28,7 +28,7 @@ analizador-contaminacion/
 │   ├── 07_monthly_aggregates.sql
 │   └── 08_advanced_analysis.sql
 └── README.md
-
+```
 
 - **data/:** contiene los datasets originales de emisiones.
 - **sql/:** contiene los scripts SQL organizados en archivos independientes por función.
@@ -52,6 +52,7 @@ Ejecutar el script 01_create_database.sql para crear la base de datos emisiones:
 
 ```sql
 source sql/01_create_database.sql;
+```
 
 2. Cargar los datasets
 
@@ -63,6 +64,7 @@ Ejecutar `02_merge_datasets.sql` para combinar todas las tablas anuales en `t_ma
 
 ```sql
 source sql/02_merge_datasets.sql;
+```
 
 4. Limpiar columnas innecesarias
 
@@ -70,6 +72,7 @@ Ejecutar 03_clean_columns.sql:
 
 ```sql
 source sql/03_clean_columns.sql;
+```
 
 5. Agregar columnas calculadas
 
@@ -77,6 +80,7 @@ Ejecutar 04_add_columns.sql para calcular valor_dia y FECHA:
 
 ```sql
 source sql/04_add_columns.sql;
+```
 
 6. Consultas de estaciones y comparación de valores
 
@@ -84,4 +88,5 @@ Ejecutar 05_station_queries.sql para obtener información de estaciones y compar
 
 ```sql
 source sql/05_station_queries.sql;
+```
 
