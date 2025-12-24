@@ -48,7 +48,7 @@ analizador-contaminacion/
 
 1. Preparar la base de datos
 
-Ejecutar el script 01_create_database.sql para crear la base de datos emisiones:
+Ejecutar el script `01_create_database.sql` para crear la base de datos `emisiones`:
 
 ```sql
 source sql/01_create_database.sql;
@@ -68,7 +68,7 @@ source sql/02_merge_datasets.sql;
 
 4. Limpiar columnas innecesarias
 
-Ejecutar 03_clean_columns.sql:
+Ejecutar `03_clean_columns.sql`:
 
 ```sql
 source sql/03_clean_columns.sql;
@@ -76,7 +76,7 @@ source sql/03_clean_columns.sql;
 
 5. Agregar columnas calculadas
 
-Ejecutar 04_add_columns.sql para calcular valor_dia y FECHA:
+Ejecutar `04_add_columns.sql` para calcular `valor_dia` y `FECHA`:
 
 ```sql
 source sql/04_add_columns.sql;
@@ -84,9 +84,33 @@ source sql/04_add_columns.sql;
 
 6. Consultas de estaciones y comparación de valores
 
-Ejecutar 05_station_queries.sql para obtener información de estaciones y comparar valores diarios:
+Ejecutar `05_station_queries.sql` para obtener información de estaciones y comparar valores diarios:
 
 ```sql
 source sql/05_station_queries.sql;
+```
+
+7. Resúmenes estadísticos y acumulados
+
+Ejecutar `06_summary_queries.sql` para generar resúmenes por contaminante y por estación:
+
+```sql
+source sql/06_summary_queries.sql;
+```
+
+8. Cálculo de medias mensuales y análisis por nombres largos
+
+Ejecutar `07_monthly_aggregates.sql`:
+
+```sql
+source sql/07_monthly_aggregates.sql;
+```
+
+9. Ranking anual y análisis avanzado
+
+Ejecutar `08_advanced_analysis.sql` para obtener rankings anuales, mes con mayor media y análisis avanzado (mediana y percentil 75):
+
+```sql
+source sql/08_advanced_analysis.sql;
 ```
 
