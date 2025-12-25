@@ -67,4 +67,7 @@ analizador-contaminacion/
 Este proyecto es un análisis finalizado y reproducible. Para nuevas contribuciones se recomienda mantener la estructura de carpetas y documentar cualquier script adicional en `docs/project_description.md`.
 
 ## Autor
-Andrés Matesanz
+**Autor:** Andrés Matesanz
+[LinkedIn](https://www.linkedin.com/in/andresmatesanz/) | [GitHub](https://github.com/andresmatesanz)
+
+Proyecto realizado como parte de un proceso formativo en análisis de datos y refactorizado posteriormente para su uso como proyecto de portfolio.
