@@ -53,8 +53,8 @@ analizador-contaminacion/
 
 1. Clonar el repositorio:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd <NOMBRE_DEL_REPOSITORIO>
+   git clone https://github.com/andresmatesanz/sql-air-pollution-analysis.git
+   cd sql-air-pollution-analysis
 
 2. Explorar los CSV en `data/` y `outputs/` para revisar los datos y resultados.
 
