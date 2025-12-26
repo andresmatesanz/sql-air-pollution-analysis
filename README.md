@@ -2,6 +2,8 @@
 
 Este proyecto analiza la calidad del aire en distintas estaciones de Madrid durante varios años, utilizando datos de distintas magnitudes (como partículas, NO2, etc.) y comparando resultados entre estaciones y años. Los resultados se presentan en CSV y están acompañados de documentación detallada.
 
+---
+
 ## 🗃️ Estructura del proyecto
 
 
@@ -49,6 +51,8 @@ analizador-contaminacion/
 - **docs/project_description.md**  
   Documento que explica el proyecto, describe los datos, los resultados obtenidos y los análisis realizados. Contiene interpretaciones directas de los CSV de salida.
 
+---
+
 ## ▶️ Cómo usar el proyecto
 
 1. Clonar el repositorio:
@@ -62,9 +66,7 @@ analizador-contaminacion/
 
 4. Consultar `docs/project_description.md` para un análisis completo y explicaciones de los outputs.
 
-## 🔁 Contribuciones
-
-Este proyecto es un análisis finalizado y reproducible. Para nuevas contribuciones se recomienda mantener la estructura de carpetas y documentar cualquier script adicional en `docs/project_description.md`.
+---
 
 ## 👤 Autor
 **Autor:** Andrés Matesanz
