@@ -69,7 +69,7 @@ analizador-contaminacion/
 ---
 
 ## 👤 Autor
-**Autor:** Andrés Matesanz
+**Autor:** Andrés Matesanz  
 [LinkedIn](https://www.linkedin.com/in/andresmatesanz/) | [GitHub](https://github.com/andresmatesanz)
 
 Proyecto realizado como parte de un proceso formativo en análisis de datos y refactorizado posteriormente para su uso como proyecto de portfolio.
